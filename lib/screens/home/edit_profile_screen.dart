@@ -22,7 +22,7 @@ class _EditProfileScreenState extends State<EditProfileScreen>
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   bool _hasChanges = false;
-  bool _isApiUpdateSupported = true; 
+  bool _isApiUpdateSupported = true;
 
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
@@ -102,9 +102,9 @@ class _EditProfileScreenState extends State<EditProfileScreen>
     // Bỏ phần check _isApiUpdateSupported và hiển thị dialog
     // Gọi trực tiếp update profile
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    
+
     final success = await authProvider.updateProfile(name, email);
-    
+
     if (success && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
